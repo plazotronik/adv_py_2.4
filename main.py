@@ -26,8 +26,7 @@ def mongo_connect(login='', password='', server='localhost', port=27017, db=''):
 def read_data(path_to_file, db_object):
     with open(path_to_file, encoding='utf8') as file:
         row = csv.DictReader(file)
-        if not list(db_object.find()):
-            db_object.insert_many(row)
+        db_object.insert_many(row)
 
 
 def format_data(db_object, column_price='Цена', column_date='Дата'):
