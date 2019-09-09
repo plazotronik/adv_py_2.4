@@ -73,7 +73,7 @@ def find_by_date(db_object, start_date, end_date, column_find='Дата'):
 
 if __name__ == '__main__':
     # input your credentials
-    conn = mongo_connect(server='it-vi.ru', port=33827)
+    conn = mongo_connect()
     concerts = conn['netology_db']['concerts']
     read_data('artists.csv', concerts)
     format_data(concerts)
